@@ -1,10 +1,9 @@
-#Mon Mar 30 16:46:06 CST 2015
 eclipse.preferences.version=1
 encoding//lib/MapCache1.0.jar=UTF-8
-encoding//src/com/resource/io/nio/mina/minaServer/BaseMessageDecoder.java=GBK
-encoding//src/com/resource/io/nio/mina/minaServer/BaseMessageEncoder.java=GBK
-encoding//src/com/resource/io/nio/mina/minaServer/MathProtocolCodecFactory.java=gbk
-encoding//src/com/resource/io/nio/mina/minaServer/Server.java=GBK
-encoding//src/com/resource/io/nio/mina/minaServer/ServerHandler.java=GBK
-encoding//src/com/resource/io/nio/mina/socketClient=GBK
+encoding//src/priv/resource/io/nio/mina/minaServer/BaseMessageDecoder.java=GBK
+encoding//src/priv/resource/io/nio/mina/minaServer/BaseMessageEncoder.java=GBK
+encoding//src/priv/resource/io/nio/mina/minaServer/MathProtocolCodecFactory.java=gbk
+encoding//src/priv/resource/io/nio/mina/minaServer/Server.java=GBK
+encoding//src/priv/resource/io/nio/mina/minaServer/ServerHandler.java=GBK
+encoding//src/priv/resource/io/nio/mina/socketClient=GBK
 encoding/<project>=UTF-8
