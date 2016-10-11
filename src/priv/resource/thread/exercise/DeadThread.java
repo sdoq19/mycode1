@@ -7,7 +7,7 @@ package priv.resource.thread.exercise;
 
  *  2>不可抢占，资源请求者不能强制从资源占有者手中夺取资源，资源只能由资源占有者主动释放。
 
- *  3>请求和保持，即当资源请求者在请求其他的资源的同时保持对原有资源的战友。
+ *  3>请求和保持，即当资源请求者在请求其他的资源的同时保持对原有资源的占用。
 
  *  4>循环等待，即存在一个等待队列：P1占有P2的资源，P2占有P3的资源，P3占有P1的资源。这样就形成了一个等待环路。
  */
@@ -40,6 +40,7 @@ class DeadThread1 implements Runnable {
 	// 然后请求o2资源
 	public void fun() {
 		synchronized (Resource.o1) {
+			System.out.println("进入DeadThread1");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -69,6 +70,7 @@ class DeadThread2 implements Runnable {
 	// 然后请求o1资源
 	public void fun() {
 		synchronized (Resource.o2) {
+			System.out.println("进入DeadThread2");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
