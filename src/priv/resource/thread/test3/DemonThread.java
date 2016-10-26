@@ -7,11 +7,11 @@ public class DemonThread {
 
     public static void main(String[] args) {
         Thread t1 = new Thread(()-> {
-                int i = 10;
-                while(i>0) {
-                    i--;
-                    System.out.println("common:" + i);
-                }
+            int i = 10;
+            while(i>0) {
+                i--;
+                System.out.println("common:" + i);
+            }
         });
 
         Thread t2 = new Thread(() -> {
