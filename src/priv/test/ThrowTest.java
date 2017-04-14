@@ -13,10 +13,23 @@ public class ThrowTest {
         new Thread(() -> {
             Hello hello = new Hello();
             try {
+                System.out.println("1");
                 LoggerUtil.error(ThrowTest.class, "error");
+                System.out.println("2");
                 hello.test();
+                System.out.println("3");
             } catch (Exception e) {
+                System.out.println("4");
                 e.printStackTrace();
+                try {
+                    System.out.println("5");
+                    throw new IOException();
+                } catch (IOException e1) {
+                    System.out.println("6");
+                    e1.printStackTrace();
+                }
+            } finally {
+                System.out.println("finally print");
             }
         }).start();
 
@@ -25,6 +38,13 @@ public class ThrowTest {
 
 class Hello {
     public void test() throws Exception {
-        throw new IOException();
+        try {
+            throw new IOException();
+        }catch(Exception e) {
+            System.out.println(e.toString());
+            throw new IOException();
+        } finally {
+            System.out.println("aaa");
+        }
     }
 }
