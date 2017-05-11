@@ -7,6 +7,8 @@ public class B {
     private String CC;
     private String DD;
 
+    private Integer AA;
+
     public String getCC() {
         return CC;
     }
@@ -21,5 +23,13 @@ public class B {
 
     public void setDD(String DD) {
         this.DD = DD;
+    }
+
+    public Integer getAA() {
+        return AA;
+    }
+
+    public void setAA(Integer AA) {
+        this.AA = AA;
     }
 }
