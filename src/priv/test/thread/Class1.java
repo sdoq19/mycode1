@@ -21,9 +21,15 @@ public class Class1 {
 
     public String method(String threadName) {
         Class2 c2 = Class2.getInstance();
-        if(!threadName.equals(c2.method(threadName))) {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String c2Name  = c2.method(threadName);
+        if(!threadName.equals(c2Name)) {
             System.out.println("------------!!!!!!!!!!!!!!!!!!!!!!!!!!!-----------------------");
         }
-        return threadName + "," +  c2.method(threadName);
+        return threadName + "," +  c2Name;
     }
 }

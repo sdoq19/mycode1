@@ -21,7 +21,7 @@ public class Class2 {
 
     public String method(String threadName) {
         try {
-            Thread.sleep(10);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
