@@ -13,7 +13,7 @@ public class CheckIfIsPhoneNumber {
     private static int a = 0;
 
     public static String isPhoneRegexp() {
-        return ".*merchantNo is not exsits or merchantOrderNo is not exsits ,merchantNo.*";
+        return ".*串号调试,detail partner.*";
     }
 
 

@@ -48,7 +48,7 @@ public class ImportFile {
 
         // 输出到文件
         try {
-            FileUtil.save(content.toString().getBytes(), new File("C:\\Users\\admin\\Desktop\\串号问题\\tsmpay_log_2017-05-10\\pro3.txt"));
+            FileUtil.save(content.toString().getBytes(), new File("C:\\Users\\admin\\Desktop\\bb.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
