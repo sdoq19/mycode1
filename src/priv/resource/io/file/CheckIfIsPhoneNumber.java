@@ -13,7 +13,7 @@ public class CheckIfIsPhoneNumber {
     private static int a = 0;
 
     public static String isPhoneRegexp() {
-        return ".*串号调试,detail partner.*";
+        return ".*\"sign_type\":\"RSA\".*";
     }
 
 

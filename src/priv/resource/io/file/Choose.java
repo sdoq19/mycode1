@@ -7,7 +7,7 @@ import java.util.Set;
  */
 public class Choose {
     public static void main(String argv[]) {
-        String filePath = "C:\\Users\\admin\\Desktop\\nohup.out";
+        String filePath = "C:\\Users\\admin\\Desktop\\pay-service.log_2017-06-10.log";
 
         Set<String> phoneSet = ImportFile.getPhoneNumFromFile(filePath);
 
