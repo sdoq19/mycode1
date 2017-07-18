@@ -15,7 +15,7 @@ public class Xor {
         // System.out.println(new String(array));//输出加密或者解密结果
 
 
-        long a = 1234567890L;
+        long a = 12345678901234L;
         long b = 20170627112500L;
         System.out.println(a^b);
     }
