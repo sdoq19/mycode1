@@ -1,8 +1,10 @@
 package priv.resource.io.file;
 
+import priv.utils.DateUtil;
 import priv.utils.FileUtil;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -56,4 +58,42 @@ public class ImportFile {
         return phoneSet;
     }
 
+    public static Set<String> getTimestamp(String filePath) {
+        Set<String> phoneSet = new HashSet<String>();
+        StringBuffer content = new StringBuffer();
+
+        try {
+            String encoding = "UTF-8";
+            File   file     = new File(filePath);
+            if (file.isFile() && file.exists()) { // 判断文件是否存在
+                InputStreamReader read = new InputStreamReader(
+                        new FileInputStream(file), encoding);// 考虑到编码格
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String         lineTxt        = null;
+                while ((lineTxt = bufferedReader.readLine()) != null) {
+                    String[] lineSplits = lineTxt.split(",");
+                    if(lineSplits.length>1) {
+                        String timestamp = lineSplits[0];
+                        String timeElasped = lineSplits[1];
+                        content.append(timestamp + "," + timeElasped + "," + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new DateUtil(new Long(timestamp)))  + "\n");
+                    }
+                }
+                read.close();
+            } else {
+                System.out.println("找不到指定的文件");
+            }
+        } catch (Exception e) {
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+        }
+
+        // 输出到文件
+        try {
+            FileUtil.save(content.toString().getBytes(), new File("C:\\Users\\admin\\Desktop\\a.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return phoneSet;
+    }
 }
