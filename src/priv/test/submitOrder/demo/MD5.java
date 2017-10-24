@@ -1,7 +1,3 @@
-/**
- * 
- */
-package priv.test.submitOrder.demo;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -9,10 +5,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.SignatureException;
 
-/**
- * @author Administrator
- *
- */
 public class MD5 {
 
 	
