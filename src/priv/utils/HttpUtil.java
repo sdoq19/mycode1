@@ -293,7 +293,7 @@ public abstract class HttpUtil {
      * @return
      * @throws IOException
      */
-    protected static String getResponseAsString(HttpURLConnection conn) throws IOException {
+    protected static String        getResponseAsString(HttpURLConnection conn) throws IOException {
         String      charset = getResponseCharset(conn.getContentType());
         InputStream es      = conn.getErrorStream();
         if (es == null) {

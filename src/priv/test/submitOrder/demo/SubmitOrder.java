@@ -16,10 +16,10 @@ import java.util.Map;
 public class SubmitOrder {
 
     // 商户号
-    public static final String merchantNo = "20000036";
+    public static final String merchantNo = "10000151";
 
     // 商户key
-    public static final String key = "bdd63bcd00da41de8281d4599550dd2a";
+    public static final String key = "17831e7b9064ee4b640c5810b36b553d";
 
     public static void main(String[] args) {
 
@@ -44,10 +44,12 @@ public class SubmitOrder {
 
         try {
             // 向众城付系统请求下单
+            Long beginTime = System.currentTimeMillis();
             String resp = HttpUtil.doPost("http://tsmpaytest.allcitygo.com/dp/tsmPay/submitOrder", map);
+            Long endTime = System.currentTimeMillis();
 
             // 下单结果
-            System.out.println(resp);
+            System.out.println("耗时：" + (endTime - beginTime) + "," + resp);
 
         } catch (IOException e) {
             e.printStackTrace();
