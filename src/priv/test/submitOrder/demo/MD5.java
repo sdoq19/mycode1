@@ -1,3 +1,4 @@
+package priv.test.submitOrder.demo;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
