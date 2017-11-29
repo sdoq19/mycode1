@@ -1,6 +1,5 @@
 package priv.test;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -8,10 +7,8 @@ import java.util.Map;
  */
 public class test1 {
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
-        map.put("bbb", "bbb");
-        new test1().add(map);
-        System.out.println(map);
+        Long a = 3222032071252274l;
+        System.out.println(a^20171128175238l);
     }
 
     public void add(Map<String, String> map) {
