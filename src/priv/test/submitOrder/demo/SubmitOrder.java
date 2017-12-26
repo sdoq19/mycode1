@@ -2,6 +2,7 @@ package priv.test.submitOrder.demo;
 
 import org.apache.commons.lang3.StringUtils;
 import priv.utils.HttpUtil;
+import priv.utils.JsonUtil;
 import priv.utils.MD5;
 
 import java.io.IOException;
@@ -44,12 +45,28 @@ public class SubmitOrder {
 
         try {
             // 向众城付系统请求下单
-            Long beginTime = System.currentTimeMillis();
-            String resp = HttpUtil.doPost("http://tsmpaytest.allcitygo.com/dp/tsmPay/submitOrder", map);
-            Long endTime = System.currentTimeMillis();
+            Long   beginTime = System.currentTimeMillis();
+            String resp      = HttpUtil.doPost("http://tsmpaytest.allcitygo.com/dp/tsmPay/submitOrder", map);
+            Long   endTime   = System.currentTimeMillis();
 
             // 下单结果
             System.out.println("耗时：" + (endTime - beginTime) + "," + resp);
+
+            // 验签
+            Map<String, String> rtnMap = JsonUtil.jsonToStrMap(resp);
+
+            String rtnSign = rtnMap.get("sign").toString();
+            rtnMap.remove("sign");
+            waitDoMD5 = toUrlString(rtnMap) + "&key=" + key;
+            String verifySign = MD5.MD5Encode(MD5.MD5Encode(waitDoMD5).toUpperCase()).toUpperCase();
+
+            System.out.println("返回的签名：" + rtnSign);
+            System.out.println("验证的签名：" + verifySign);
+            if (verifySign.equals(rtnSign)) {
+                System.out.println("验签成功");
+            } else {
+                System.out.println("验签失败");
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
